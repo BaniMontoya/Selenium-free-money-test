@@ -1,14 +1,14 @@
 from selenium import webdriver
 import time
-import random
 from selenium.webdriver.common.keys import Keys
+import secrets
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-startup-window')
 driver = webdriver.Chrome(
     executable_path="/Users/pbsoft/bot_bitmagnet/chromedriver", chrome_options=chrome_options)
-ran = random.randrange(0, 20, 5)
-ran2 = random.randrange(0, 50, 5)
+ran = secrets.SystemRandom().randrange(0, 20, 5)
+ran2 = secrets.SystemRandom().randrange(0, 50, 5)
 url = "http://www.bitcoinearningshq.com/bitfaucet/login"
 time.sleep(ran2)
 driver.get(url)
